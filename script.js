@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const revealItems = document.querySelectorAll('.reveal');
 
 const showImmediately = () => revealItems.forEach((el) => el.classList.add('visible'));
@@ -14,6 +16,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         }
       });
     },
+    { threshold: 0.12, rootMargin: '0px 0px -24px 0px' }
     { threshold: 0.15, rootMargin: '0px 0px -32px 0px' }
   );
 
@@ -30,6 +33,22 @@ toggles.forEach((button) => {
 
 const BLOG_STORAGE_KEY = 'visrodeck.blogPosts';
 const UPDATES_STORAGE_KEY = 'visrodeck.updates';
+
+const safeGet = (key) => {
+  try {
+    return JSON.parse(localStorage.getItem(key) || '[]');
+  } catch {
+    return [];
+  }
+};
+
+const safeSet = (key, value) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // no-op when storage is unavailable
+  }
+};
 
 const blogList = document.getElementById('blog-list');
 const blogForm = document.getElementById('blog-form');
@@ -52,6 +71,7 @@ const renderBlogPostCard = (post) => {
 };
 
 if (blogList) {
+  safeGet(BLOG_STORAGE_KEY).forEach((post) => renderBlogPostCard(post));
   const storedPosts = JSON.parse(localStorage.getItem(BLOG_STORAGE_KEY) || '[]');
   storedPosts.forEach((post) => renderBlogPostCard(post));
 }
@@ -69,6 +89,9 @@ if (blogForm) {
 
     if (!newPost.title || !newPost.date || !newPost.excerpt) return;
 
+    const storedPosts = safeGet(BLOG_STORAGE_KEY);
+    storedPosts.unshift(newPost);
+    safeSet(BLOG_STORAGE_KEY, storedPosts);
     const storedPosts = JSON.parse(localStorage.getItem(BLOG_STORAGE_KEY) || '[]');
     storedPosts.unshift(newPost);
     localStorage.setItem(BLOG_STORAGE_KEY, JSON.stringify(storedPosts));
@@ -94,6 +117,7 @@ const renderUpdateCard = (update) => {
 };
 
 if (updatesList) {
+  safeGet(UPDATES_STORAGE_KEY).forEach((update) => renderUpdateCard(update));
   const storedUpdates = JSON.parse(localStorage.getItem(UPDATES_STORAGE_KEY) || '[]');
   storedUpdates.forEach((update) => renderUpdateCard(update));
 }
@@ -111,6 +135,9 @@ if (updateForm) {
 
     if (!update.version || !update.date || !update.changes.length) return;
 
+    const storedUpdates = safeGet(UPDATES_STORAGE_KEY);
+    storedUpdates.unshift(update);
+    safeSet(UPDATES_STORAGE_KEY, storedUpdates);
     const storedUpdates = JSON.parse(localStorage.getItem(UPDATES_STORAGE_KEY) || '[]');
     storedUpdates.unshift(update);
     localStorage.setItem(UPDATES_STORAGE_KEY, JSON.stringify(storedUpdates));
