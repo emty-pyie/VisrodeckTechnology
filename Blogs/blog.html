@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/visrodeckLogo.png" />
+    <title>Blog | Visrodeck Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-lighting" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="navbar">
+      <a class="logo" href="index.html">Visrodeck<span>Technology</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="jane.html">Jane</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="updates.html">Updates</a>
+      </nav>
+      <button class="button secondary" data-toggle="blog-upload-form" type="button">Upload Blog</button>
+    </header>
+
+    <main class="container">
+      <section class="section reveal">
+        <p class="eyebrow">Visrodeck Blog</p>
+        <h1>Notes on Building Practical AI Products</h1>
+        <p class="section-intro">Product decisions, engineering practices, and release insights from the Visrodeck team.</p>
+      </section>
+
+      <section class="section reveal hidden" id="blog-upload-form">
+        <div class="card form-card">
+          <h2>Upload Blog Post</h2>
+          <p class="section-intro">Fill in the fields and click publish. Posts are saved in your browser for now (local storage).</p>
+          <form id="blog-form" class="form-grid">
+            <label>Title<input required name="title" placeholder="Post title" /></label>
+            <label>Date<input required type="date" name="date" /></label>
+            <label>Excerpt<textarea required name="excerpt" rows="3" placeholder="Short summary"></textarea></label>
+            <label>Body (optional)<textarea name="body" rows="5" placeholder="Article content for future use"></textarea></label>
+            <button class="button primary" type="submit">Publish Post</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="grid three" id="blog-list">
+          <article class="card post-card">
+            <p class="blog-meta">Jan 22, 2026</p>
+            <h3><a href="blog-post.html">How We Design AI Interfaces for Focused Work</a></h3>
+            <p>Our design system principles for shipping interfaces that feel calm, structured, and high-signal.</p>
+          </article>
+          <article class="card post-card">
+            <p class="blog-meta">Jan 14, 2026</p>
+            <h3><a href="blog-post.html">Shipping Jane Alpha: What We Prioritized First</a></h3>
+            <p>A behind-the-scenes look at our early roadmap decisions, tradeoffs, and quality bar.</p>
+          </article>
+          <article class="card post-card">
+            <p class="blog-meta">Jan 03, 2026</p>
+            <h3><a href="blog-post.html">From Prototype to Product: Building for Enterprise Readiness</a></h3>
+            <p>The architecture and release process changes required to move from demo-grade to production-grade.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer reveal">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title">Visrodeck Technology Team</p>
+          <p>GAME DEVELOPMENT IN PROGRESS</p>
+          <p>Under OXIDE STUDIOS INC</p>
+        </div>
+        <div>
+          <p class="footer-title">Recent Release</p>
+          <p>Minecraft Forge Mod Source Code Released</p>
+          <p><strong>Axe Or Ex</strong> — adds throwable axe.</p>
+          <p>And many more upcoming.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
