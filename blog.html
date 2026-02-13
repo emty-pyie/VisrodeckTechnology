@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog | Visrodeck Technology</title>
+    <title>How We Design AI Interfaces for Focused Work | Visrodeck Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,53 +21,26 @@
         <a class="active" href="blog.html">Blog</a>
         <a href="updates.html">Updates</a>
       </nav>
-      <button class="button secondary" data-toggle="blog-upload-form" type="button">Upload Blog</button>
-      <a class="button secondary" href="jane.html">Join Alpha</a>
+      <a class="button secondary" href="blog.html">All Posts</a>
     </header>
 
-    <main class="container">
-      <section class="section reveal">
-        <p class="eyebrow">Visrodeck Blog</p>
-        <h1>Notes on Building Practical AI Products</h1>
-        <p class="section-intro">Product decisions, engineering practices, and release insights from the Visrodeck team.</p>
-      </section>
+    <article class="article reveal">
+      <p class="meta">Published Jan 22, 2026 · 6 min read</p>
+      <h1>How We Design AI Interfaces for Focused Work</h1>
+      <p>Most AI products fail in day-to-day workflows because they optimize for novelty over clarity. At Visrodeck, we design interfaces with a strict principle: reduce cognitive overhead while increasing execution speed.</p>
 
-      <section class="section reveal hidden" id="blog-upload-form">
-        <div class="card form-card">
-          <h2>Upload Blog Post</h2>
-          <p class="section-intro">Fill in the fields and click publish. Posts are saved in your browser for now (local storage).</p>
-          <form id="blog-form" class="form-grid">
-            <label>Title<input required name="title" placeholder="Post title" /></label>
-            <label>Date<input required type="date" name="date" /></label>
-            <label>Excerpt<textarea required name="excerpt" rows="3" placeholder="Short summary"></textarea></label>
-            <label>Body (optional)<textarea name="body" rows="5" placeholder="Article content for future use"></textarea></label>
-            <button class="button primary" type="submit">Publish Post</button>
-          </form>
-        </div>
-      </section>
+      <h2>Our design priorities</h2>
+      <ul>
+        <li>Hierarchy first: users should always know where to focus next.</li>
+        <li>Context persistence: avoid forcing users to restate intent.</li>
+        <li>Controlled motion: animations guide, never distract.</li>
+      </ul>
 
-      <section class="section reveal">
-        <div class="grid three" id="blog-list">
-      <section class="section reveal">
-        <div class="grid three">
-          <article class="card post-card">
-            <p class="blog-meta">Jan 22, 2026</p>
-            <h3><a href="blog-post.html">How We Design AI Interfaces for Focused Work</a></h3>
-            <p>Our design system principles for shipping interfaces that feel calm, structured, and high-signal.</p>
-          </article>
-          <article class="card post-card">
-            <p class="blog-meta">Jan 14, 2026</p>
-            <h3><a href="blog-post.html">Shipping Jane Alpha: What We Prioritized First</a></h3>
-            <p>A behind-the-scenes look at our early roadmap decisions, tradeoffs, and quality bar.</p>
-          </article>
-          <article class="card post-card">
-            <p class="blog-meta">Jan 03, 2026</p>
-            <h3><a href="blog-post.html">From Prototype to Product: Building for Enterprise Readiness</a></h3>
-            <p>The architecture and release process changes required to move from demo-grade to production-grade.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+      <h2>Why this matters for enterprise teams</h2>
+      <p>When systems are used across departments, predictability becomes a feature. Structured interfaces lower onboarding costs, reduce support load, and increase trust in AI-assisted decisions.</p>
+
+      <p>As we continue building Jane, these principles shape every workflow we release.</p>
+    </article>
     <footer class="footer reveal">
       <div class="footer-grid">
         <div>
@@ -78,14 +51,10 @@
         <div>
           <p class="footer-title">Recent Release</p>
           <p>Minecraft Forge Mod Source Code Released</p>
-          <p><strong>Axe And Ex</strong> — adds throwable axe.</p>
+          <p><strong>Axe Or Ex</strong> — adds throwable axe.</p>
           <p>And many more upcoming.</p>
         </div>
       </div>
-
-    <footer class="footer reveal">
-      <p>© 2026 Visrodeck Technology</p>
-      <p>Intelligent software for modern teams.</p>
     </footer>
 
     <script src="script.js"></script>
