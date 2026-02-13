@@ -17,7 +17,6 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       });
     },
     { threshold: 0.12, rootMargin: '0px 0px -24px 0px' }
-    { threshold: 0.15, rootMargin: '0px 0px -32px 0px' }
   );
 
   revealItems.forEach((item) => observer.observe(item));
@@ -72,8 +71,6 @@ const renderBlogPostCard = (post) => {
 
 if (blogList) {
   safeGet(BLOG_STORAGE_KEY).forEach((post) => renderBlogPostCard(post));
-  const storedPosts = JSON.parse(localStorage.getItem(BLOG_STORAGE_KEY) || '[]');
-  storedPosts.forEach((post) => renderBlogPostCard(post));
 }
 
 if (blogForm) {
@@ -92,9 +89,6 @@ if (blogForm) {
     const storedPosts = safeGet(BLOG_STORAGE_KEY);
     storedPosts.unshift(newPost);
     safeSet(BLOG_STORAGE_KEY, storedPosts);
-    const storedPosts = JSON.parse(localStorage.getItem(BLOG_STORAGE_KEY) || '[]');
-    storedPosts.unshift(newPost);
-    localStorage.setItem(BLOG_STORAGE_KEY, JSON.stringify(storedPosts));
 
     renderBlogPostCard(newPost);
     blogForm.reset();
@@ -118,8 +112,6 @@ const renderUpdateCard = (update) => {
 
 if (updatesList) {
   safeGet(UPDATES_STORAGE_KEY).forEach((update) => renderUpdateCard(update));
-  const storedUpdates = JSON.parse(localStorage.getItem(UPDATES_STORAGE_KEY) || '[]');
-  storedUpdates.forEach((update) => renderUpdateCard(update));
 }
 
 if (updateForm) {
@@ -138,9 +130,6 @@ if (updateForm) {
     const storedUpdates = safeGet(UPDATES_STORAGE_KEY);
     storedUpdates.unshift(update);
     safeSet(UPDATES_STORAGE_KEY, storedUpdates);
-    const storedUpdates = JSON.parse(localStorage.getItem(UPDATES_STORAGE_KEY) || '[]');
-    storedUpdates.unshift(update);
-    localStorage.setItem(UPDATES_STORAGE_KEY, JSON.stringify(storedUpdates));
 
     renderUpdateCard(update);
     updateForm.reset();
