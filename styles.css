@@ -274,3 +274,63 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   .grid.four { grid-template-columns: 1fr; }
   .section { padding: var(--space-5) 0; }
 }
+
+.hidden { display: none; }
+
+.form-card {
+  max-width: 860px;
+}
+
+.form-grid {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  background: rgba(15, 23, 36, 0.85);
+  border: 1px solid rgba(145, 174, 221, 0.3);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: rgba(139, 185, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(110, 164, 245, 0.18);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.footer-title {
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.footer-grid p {
+  margin: 0 0 0.45rem;
+}
+
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}

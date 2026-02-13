@@ -21,6 +21,7 @@
         <a href="blog.html">Blog</a>
         <a class="active" href="updates.html">Updates</a>
       </nav>
+      <button class="button secondary" data-toggle="update-form-wrap" type="button">Add Update</button>
       <a class="button secondary" href="blog.html">Engineering Notes</a>
     </header>
 
@@ -28,6 +29,25 @@
       <section class="section reveal">
         <p class="eyebrow">Release Notes</p>
         <h1>Product Updates</h1>
+        <p class="section-intro">A transparent log of what we ship, improve, and fix across the Visrodeck platform. Use “Add Update” to append new entries.</p>
+      </section>
+
+      <section class="section reveal hidden" id="update-form-wrap">
+        <div class="card form-card">
+          <h2>Add Update Details</h2>
+          <form id="update-form" class="form-grid">
+            <label>Version title<input required name="version" placeholder="v0.7.0 · Jane Collaboration" /></label>
+            <label>Date<input required type="date" name="date" /></label>
+            <label>Changes (one bullet per line)
+              <textarea required name="changes" rows="6" placeholder="Added shared workspace channels&#10;Improved startup performance"></textarea>
+            </label>
+            <button class="button primary" type="submit">Publish Update</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="timeline" id="updates-list">
         <p class="section-intro">A transparent log of what we ship, improve, and fix across the Visrodeck platform.</p>
       </section>
 
@@ -65,6 +85,20 @@
         </div>
       </section>
     </main>
+    <footer class="footer reveal">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title">Visrodeck Technology Team</p>
+          <p>GAME DEVELOPMENT IN PROGRESS</p>
+          <p>Under OXIDE STUDIOS INC</p>
+        </div>
+        <div>
+          <p class="footer-title">Recent Release</p>
+          <p>Minecraft Forge Mod Source Code Released</p>
+          <p><strong>Axe And Ex</strong> — adds throwable axe.</p>
+          <p>And many more upcoming.</p>
+        </div>
+      </div>
 
     <footer class="footer reveal">
       <p>© 2026 Visrodeck Technology</p>
